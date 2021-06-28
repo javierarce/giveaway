@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Last Time</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/form.css" />
+
+    <script>window.isLoggedIn = <%= isLoggedIn %></script>
+
+    <% if (isDevelopment) { -%>
+    <script src="/js/base.js"></script>
+    <script src="/js/User.js"></script>
+    <script src="/js/App.js"></script>
+    <script src="/js/client.js"></script>
+    <% } else { -%>
+    <script src="/js/dist/all.js"></script>
+    <% } -%>
+  </head>
+  <body>
+    <div class="Content">
+      <div class="Users js-users">
+        <div class="Login">
+          <% if (!isLoggedIn) { -%><a href="/login">Login</a><% } -%>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

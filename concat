@@ -1,0 +1,1 @@
+cat public/js/base.js public/js/App.js public/js/User.js public/js/client.js > public/js/dist/all.js

@@ -1,0 +1,62 @@
+.Form {
+  width: 100%;
+  margin: auto;
+  transition: opacity 250ms ease-in-out;
+}
+
+.Form.is-horizontal {
+  display: flex;
+}
+
+.Input {
+  width: 100%;
+}
+
+.Input__field {
+  display: block;
+  width: 100%;
+  font-size: 0.8em;
+  outline: none;
+  border: none;
+  transition: border 150ms ease-in-out;
+  resize: none;
+}
+
+.Button {
+  position: relative;
+  border: none;
+  font-size: 0.8em;
+  outline: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  color: #fff;
+  background: var(--active);
+  transition: background 100ms ease-in-out, opacity 100ms ease-in-out, color 100ms ease-in-out;
+}
+
+input[type="datetime-local"] {
+  -webkit-appearance: none;
+}
+
+button {
+  margin: 0;
+  border: none;
+  padding: 0;
+  text-align: left;
+  font-size: 1em;
+  outline: none;
+  background: transparent;
+  text-decoration: none;
+  box-shadow: none;
+  -webkit-appearance: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+

@@ -114,7 +114,13 @@ class App {
     this.users = []
     this.spinner = new Spinner()
     this.$element = getElement('.js-app')
+    this.$content = getElement('.js-content')
+    this.$cover = getElement('.js-cover')
     this.render()
+  }
+
+  setLoaded () {
+    this.$element.classList.add('is-loaded')
   }
 
   getUsers () {
@@ -134,7 +140,6 @@ class App {
         console.error(data)
         return
       }
-
       this.addUsers(data)
     }).catch((e) => { 
       console.error(e)
@@ -147,12 +152,26 @@ class App {
       this.$users.appendChild(user.render())
       this.users.push(user)
     })
+
+    this.setLoaded()
+  }
+
+  addLogin () {
+    if (window.isLoggedIn) {
+      return
+    }
+
+    this.$login = createElement({ className: 'Login' })
+    this.$loginButton = createElement({ className: 'Login__link', type: 'a', text: 'Login with Twitter', href:"/login" })
+    this.$login.appendChild(this.$loginButton)
+    this.$cover.appendChild(this.$login)
   }
 
   render () {
     this.$users = createElement({ className: 'Users' })
-    this.$element.appendChild(this.spinner.$element)
-    this.$element.appendChild(this.$users)
+    this.$content.appendChild(this.spinner.$element)
+    this.$content.appendChild(this.$users)
+    this.addLogin()
     this.getUsers()
   }
 }

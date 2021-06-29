@@ -7,8 +7,9 @@ const ENDPOINTS = {
 class App {
   constructor () {
     this.users = []
-    this.$element = getElement('.js-users')
-    this.getUsers()
+    this.spinner = new Spinner()
+    this.$element = getElement('.js-app')
+    this.render()
   }
 
   getUsers () {
@@ -16,10 +17,13 @@ class App {
     const method = 'GET'
     const options = { method, headers }
 
+    this.spinner.show()
     fetch(ENDPOINTS.all, options).then(this.onGetUsers.bind(this))
   }
 
   onGetUsers (response) { 
+    this.spinner.hide()
+
     response.json().then((data) => {
       if (response && response.status != HTTP_OK) {
         console.error(data)
@@ -35,8 +39,15 @@ class App {
   addUsers (data) {
     data.forEach((userData) => {
       let user = new User(userData)
-      this.$element.appendChild(user.render())
+      this.$users.appendChild(user.render())
       this.users.push(user)
     })
+  }
+
+  render () {
+    this.$users = createElement({ className: 'Users' })
+    this.$element.appendChild(this.spinner.$element)
+    this.$element.appendChild(this.$users)
+    this.getUsers()
   }
 }

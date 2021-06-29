@@ -3,6 +3,30 @@ const killEvent = (e) => {
   e.preventDefault()
 }
 
+const isEmpty = (obj) => {
+  return Object.keys(obj).length === 0;
+}
+
+const createElement = ({ className, html, text, type = 'div', ...options }) => {
+  let $el = document.createElement(type)
+
+  if (html) {
+    $el.innerHTML = html
+  } else if (text) {
+    $el.innerText = text
+  }
+
+  className.split(' ').filter(c => c).forEach(name => $el.classList.add(name))
+
+  if (!isEmpty(options)) {
+    Object.keys(options).forEach((key) => {
+      $el[key] = options[key]
+    })
+  }
+
+  return $el
+}
+
 const addClass = (elementClass, className) => {
   let $element = getElement(`.${elementClass}`)
 

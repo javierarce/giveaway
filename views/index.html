@@ -14,6 +14,7 @@
     <% if (isDevelopment) { -%>
     <script src="/js/base.js"></script>
     <script src="/js/User.js"></script>
+    <script src="/js/Spinner.js"></script>
     <script src="/js/App.js"></script>
     <script src="/js/client.js"></script>
     <% } else { -%>
@@ -21,12 +22,6 @@
     <% } -%>
   </head>
   <body>
-    <div class="Content">
-      <div class="Users js-users">
-        <div class="Login">
-          <% if (!isLoggedIn) { -%><a href="/login">Login</a><% } -%>
-        </div>
-      </div>
-    </div>
+    <div class="App js-app"></div>
   </body>
 </html>

@@ -140,10 +140,25 @@ class App {
         console.error(data)
         return
       }
-      this.addUsers(data)
+
+      if (data && !data.length) {
+        this.addPlaceholder()
+      } else {
+        this.addUsers(data)
+      }
     }).catch((e) => { 
       console.error(e)
     })
+  }
+
+  addPlaceholder () {
+    this.$element.classList.add('is-empty')
+    this.$placeholder = createElement({ className: 'Placeholder', html: "How sad, there aren't any participants" })
+    this.$users.appendChild(this.$placeholder)
+
+    setTimeout(() => {
+      this.setLoaded()
+    }, 100)
   }
 
   addUsers (data) {

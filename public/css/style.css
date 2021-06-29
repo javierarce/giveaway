@@ -54,12 +54,7 @@ table {
 :root {
   --dark: #111111;
   --gray: #ccc;
-  --yellow: #FFFFE0;
-  --white: #FFFFFF;
-  --light: rgba(17,17,17,0.4);
-
-  --active: #6d8bf4;
-  --hover: #ea74ac;
+  --black: #000;
   --text: #fff;
   --background: #fff;
 }
@@ -80,7 +75,6 @@ sub {
 }
 
 strong {
-  color: var(--active);
   font-weight: bold;
 }
 
@@ -111,9 +105,26 @@ p {
 }
 
 a {
-  color: var(--white);
+  color: var(--text);
   font-weight: 500;
   transition: color 200ms ease-in-out;
+}
+
+.App.is-empty .Users {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+}
+
+.Placeholder {
+  color: var(--gray);
+
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 500ms ease-in-out;
+  transition-delay: 500ms;
 }
 
 .Thanks {
@@ -139,7 +150,8 @@ a {
   transition-delay: 500ms;
 }
 
-.App.is-loaded .Login__link {
+.App.is-loaded .Login__link,
+.App.is-loaded .Placeholder {
   visibility: visible;
   opacity: 1;
   transform: scale(1);
@@ -232,7 +244,7 @@ a {
 
 .Cover {
   position: relative;
-  background: #000;
+  background: var(--black);
   width: 100%;
   height: 100%;
   display: flex;
@@ -263,7 +275,7 @@ a {
 }
 
 .Credits {
-  color: #000;
+  color: var(--black);
   font-size: 0.7em;
   position: absolute;
   bottom: 1em;

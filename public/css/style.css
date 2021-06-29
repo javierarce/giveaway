@@ -262,10 +262,6 @@ a {
   transition: all 500ms ease-in-out;
 }
 
-.App.is-loaded .Kindle:hover {
-  transform: scale(0.9);
-}
-
 .Credits {
   color: #000;
   font-size: 0.7em;

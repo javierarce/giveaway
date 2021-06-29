@@ -117,6 +117,14 @@ a {
   transition: color 200ms ease-in-out;
 }
 
+.Thanks {
+  position: absolute;
+  bottom: 2.4em;
+  width: 100%;
+  min-width: 400px;
+  text-align: center;
+}
+
 .Login {
   position: absolute;
   bottom: 3em;

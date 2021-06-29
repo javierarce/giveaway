@@ -51,8 +51,14 @@ class App {
     this.setLoaded()
   }
 
+  addThanks () {
+    this.$thanks = createElement({ className: 'Thanks', html: 'Thanks! If you are selected<br />I\'ll contact you through Twitter.' })
+    this.$cover.appendChild(this.$thanks)
+  }
+
   addLogin () {
     if (window.isLoggedIn) {
+      this.addThanks()
       return
     }
 
@@ -66,6 +72,7 @@ class App {
     this.$users = createElement({ className: 'Users' })
     this.$content.appendChild(this.spinner.$element)
     this.$content.appendChild(this.$users)
+
     this.addLogin()
     this.getUsers()
   }

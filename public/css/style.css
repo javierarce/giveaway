@@ -159,7 +159,6 @@ a {
 
 .Users {
   position: relative;
-  display: grid;
   padding: 2em;
   display: grid;
   grid-gap: 1em;
@@ -285,3 +284,31 @@ a {
   font-size: 0.7em;
   z-index: 1000;
 }
+
+@media all and (max-width: 1280px) {
+}
+
+@media all and (max-width: 1024px) {
+}
+
+@media all and (max-width: 640px) {
+  .App {
+    flex-direction: column;
+  }
+  .Users {
+    grid-template-columns: repeat(2, 1fr);
+    flex-direction: column;
+    overflow: auto;
+  }
+
+  .Kindle {
+    display: none;
+  }
+  .Login {
+    position: relative;
+    bottom: auto;
+    width: 100%;
+    text-align: center;
+  }
+}
+

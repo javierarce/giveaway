@@ -151,6 +151,11 @@ a {
 .Avatar.is-visible {
   visibility: visible;
   opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+.Avatar:hover {
+  transform: scale(1.2);
 }
 
 .Avatar {
@@ -159,6 +164,7 @@ a {
   border-radius: 50%;
   visibility: hidden;
   opacity: 0;
-  transition: all 250ms ease-in-out;
+  transform: scale(0) rotate(-90deg);
+  transition: all 200ms ease-in-out;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }

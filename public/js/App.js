@@ -7,6 +7,8 @@ const ENDPOINTS = {
 class App {
   constructor () {
     this.users = []
+    this.$element = getElement('.js-users')
+    this.getUsers()
   }
 
   getUsers () {
@@ -18,20 +20,23 @@ class App {
   }
 
   onGetUsers (response) { 
-    let $users = getElement('.js-users')
-
     response.json().then((data) => {
-      if (response && response.status === HTTP_OK) {
-        data.forEach((userData) => {
-          let user = new User(userData)
-          $users.appendChild(user.render())
-          this.users.push(user)
-        })
-      } else {
+      if (response && response.status != HTTP_OK) {
         console.error(data)
+        return
       }
+
+      this.addUsers(data)
     }).catch((e) => { 
       console.error(e)
+    })
+  }
+
+  addUsers (data) {
+    data.forEach((userData) => {
+      let user = new User(userData)
+      this.$element.appendChild(user.render())
+      this.users.push(user)
     })
   }
 }

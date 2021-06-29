@@ -278,9 +278,9 @@ a {
 }
 
 .Credits {
-  color: var(--black);
-  font-size: 0.7em;
-  position: absolute;
+  position: fixed;
   bottom: 1em;
   right: 2em;
+  color: var(--black);
+  font-size: 0.7em;
 }

@@ -78,7 +78,7 @@ class App {
     }
 
     this.$login = createElement({ className: 'Login' })
-    this.$loginButton = createElement({ className: 'Login__link', type: 'a', text: 'Login with Twitter', href:"/login" })
+    this.$loginButton = createElement({ className: 'Login__link', type: 'a', text: 'Join the giveaway', href:"/login" })
     this.$login.appendChild(this.$loginButton)
     this.$cover.appendChild(this.$login)
   }

@@ -153,7 +153,7 @@ class App {
 
   addPlaceholder () {
     this.$element.classList.add('is-empty')
-    this.$placeholder = createElement({ className: 'Placeholder', html: "How sad, there aren't any participants" })
+    this.$placeholder = createElement({ className: 'Placeholder', html: "How sad, there aren't any participants yet" })
     this.$users.appendChild(this.$placeholder)
 
     setTimeout(() => {

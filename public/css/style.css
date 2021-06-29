@@ -173,6 +173,7 @@ a {
   width: 100px;
   height: 100px;
   text-align: center;
+  margin: auto;
 }
 
 .Avatar.is-visible {
@@ -304,6 +305,7 @@ a {
   .Kindle {
     display: none;
   }
+
   .Login {
     position: relative;
     bottom: auto;

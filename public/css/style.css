@@ -292,7 +292,7 @@ a {
     flex-direction: column;
   }
   .Users {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     flex-direction: column;
     overflow: auto;
   }
@@ -308,3 +308,8 @@ a {
   }
 }
 
+@media all and (max-width: 640px) {
+  .Users {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

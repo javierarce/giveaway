@@ -193,7 +193,7 @@ class App {
     this.$content.appendChild(this.spinner.$element)
     this.$content.appendChild(this.$users)
 
-    this.addLogin()
+    //this.addLogin()
     this.getUsers()
   }
 }

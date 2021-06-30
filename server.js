@@ -78,7 +78,7 @@ app.get('/', (request, response) => {
 })
 
 app.get('/login', (request, response) => {
-  response.redirect('/auth/twitter')
+  // response.redirect('/auth/twitter')
 })
 
 app.get('/api/all', (request, response) => {

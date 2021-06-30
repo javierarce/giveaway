@@ -46,6 +46,16 @@ class App {
     })
   }
 
+  addEnd () {
+    this.$element.classList.add('is-empty')
+    this.$placeholder = createElement({ className: 'Placeholder', html: "Thanks, this thing is over." })
+    this.$users.appendChild(this.$placeholder)
+
+    setTimeout(() => {
+      this.setLoaded()
+    }, 100)
+  }
+
   addPlaceholder () {
     this.$element.classList.add('is-empty')
     this.$placeholder = createElement({ className: 'Placeholder', html: "How sad, there aren't any participants yet" })
@@ -88,7 +98,8 @@ class App {
     this.$content.appendChild(this.spinner.$element)
     this.$content.appendChild(this.$users)
 
+    this.addEnd()
     //this.addLogin()
-    this.getUsers()
+    //this.getUsers()
   }
 }

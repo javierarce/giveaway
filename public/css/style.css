@@ -312,4 +312,8 @@ a {
   .Users {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .App {
+    height: auto;
+  }
 }
